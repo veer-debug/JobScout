@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings - Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hide the header by default */
+        .header-hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        .header-visible {
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Popup Header Section -->
+    <header id="popupHeader" class="bg-white shadow-md fixed top-0 left-0 right-0 z-10 header-hidden">
+        <div class="container mx-auto p-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-blue-600">JobFinder</a>
+            <!-- Navigation with Hover Underline Effect -->
+            <nav class="space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
+            </nav>
+            <!-- Login Button -->
+            <a href="#" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login/Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Hero Section with Search Bar -->
+    <section class="bg-blue-600 py-20 mt-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold text-white">Find Your Dream Job</h1>
+            <p class="text-lg text-gray-200 mt-4">Search from thousands of jobs available in your location and expertise</p>
+
+            <!-- Search Bar -->
+            <form class="mt-8 max-w-3xl mx-auto flex space-x-4">
+                <input type="text" placeholder="Job Title, Keywords" class="w-full p-4 rounded text-gray-700">
+                <input type="text" placeholder="Location" class="w-full p-4 rounded text-gray-700">
+                <button type="submit" class="bg-white text-blue-600 font-semibold px-6 py-4 rounded">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Job Categories Section -->
+    <section class="py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Browse Jobs by Category</h2>
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <!-- Job Categories -->
+                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
+                    <span class="text-2xl font-semibold">Tech</span>
+                    <p class="text-gray-600 mt-2">Software Development, AI, Data Science</p>
+                </a>
+                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
+                    <span class="text-2xl font-semibold">Design</span>
+                    <p class="text-gray-600 mt-2">UI/UX, Graphic Design, Web Design</p>
+                </a>
+                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
+                    <span class="text-2xl font-semibold">Marketing</span>
+                    <p class="text-gray-600 mt-2">SEO, Content Marketing, Digital Marketing</p>
+                </a>
+                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
+                    <span class="text-2xl font-semibold">2024</span>
+                    <p class="text-gray-600 mt-2">Jobs for Graduates of 2024</p>
+                </a>
+                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
+                    <span class="text-2xl font-semibold">2025</span>
+                    <p class="text-gray-600 mt-2">Jobs for Graduates of 2025</p>
+                </a>
+                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
+                    <span class="text-2xl font-semibold">2026</span>
+                    <p class="text-gray-600 mt-2">Jobs for Graduates of 2026</p>
+                </a>
+                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
+                    <span class="text-2xl font-semibold">2027</span>
+                    <p class="text-gray-600 mt-2">Jobs for Graduates of 2027</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Featured Jobs</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <!-- Job Card -->
+                <div class="bg-white p-6 shadow-md rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-600">Software Engineer</h3>
+                    <p class="text-gray-600 mt-2">Google - Mountain View, CA</p>
+                    <p class="mt-4 text-gray-600">We are looking for a passionate software engineer to work on cutting-edge technologies. Apply today!</p>
+                    <a href="#" class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</a>
+                </div>
+
+                <!-- Job Card -->
+                <div class="bg-white p-6 shadow-md rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-600">Product Designer</h3>
+                    <p class="text-gray-600 mt-2">Apple - Cupertino, CA</p>
+                    <p class="mt-4 text-gray-600">Join our team of creative designers to create innovative products. Your designs will shape the future.</p>
+                    <a href="#" class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</a>
+                </div>
+
+                <!-- Job Card -->
+                <div class="bg-white p-6 shadow-md rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-600">Data Scientist</h3>
+                    <p class="text-gray-600 mt-2">Microsoft - Redmond, WA</p>
+                    <p class="mt-4 text-gray-600">Be part of our growing data science team to build data-driven solutions. Apply today to change the future!</p>
+                    <a href="#" class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2024 JobFinder. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const popupHeader = document.getElementById("popupHeader");
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                popupHeader.classList.remove("header-visible");
+                popupHeader.classList.add("header-hidden");
+            } else {
+                // Scrolling up
+                popupHeader.classList.remove("header-hidden");
+                popupHeader.classList.add("header-visible");
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
