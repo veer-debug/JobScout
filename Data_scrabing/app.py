@@ -42,7 +42,8 @@ def save_data_to_csv(data, filename):
 
 def main():
     # Load the company details from the Excel file
-    companies = load_companies_from_excel("companies.xlsx")
+    # companies = load_companies_from_excel("companies.xlsx")
+    companies=['https://www.google.com/about/careers/applications/jobs/results/']
 
     # Initialize the WebScraper
     scraper = WebScraper()
