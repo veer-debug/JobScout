@@ -1,11 +1,18 @@
 import pandas as pd
-from scrab import WebScraper
+from testing import WebScraper
 import os
 
-df=pd.read_excel('Data_scrabing\companies.xlsx')
+df=pd.read_excel('Carears_pages.xlsx')
+df.rename(columns={'If Dynamic_xpath': 'next'}, inplace=True)
 for ind,row in df.iterrows():
-    url=row['CareersLink']
-    out_div=[row['Outer_div'],row['If Dynamic_xpa']]
-    divs=[[row['Name_div_tag'],row['Name_div']],[row['Location_div_tag'],row['Location_div']],[row['Url_div_tag'],row['Url_div']],row['Name']]
-    WebScraper.scrape_job_data_static(url,out_div,divs)
+    if ind==8:
+        print(row['Name'])
+        url=row['CareersLink']
+        out_div=[row['Outer_div'],row['next']]
+        divs=[[row['Name_div_tag'],row['Name_div']],[row['Location_div_tag'],row['Location_div']],[row['Url_div_tag'],row['Url_div']],row['Name']]
+        WebScraper.scrape_job_data_static(url,out_div,divs)
+
+    # print(url)
+    # print(out_div)
+
     
