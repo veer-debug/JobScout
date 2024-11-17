@@ -2,6 +2,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 import csv
 from data_base import Data
+import authontication 
+
 import pandas as pd
 # ===================Data filtring========================
 data_class=Data()
@@ -15,16 +17,31 @@ app = Flask(__name__)
 
 @app.route("/")
 def scrape():
-   
     return render_template("home.html")
 
-
-@app.route('/signup')
+@app.route('/signup', methods=["GET", "POST"])
 def signup():
-    return render_template('signup.html')
-@app.route('/login')
+    if request.method == "POST":
+        name=request.form["user_name"]
+        user_email=request.form["user_email"]
+        password1=request.form["user_password1"]
+        password2=request.form["user_password2"]
+        if password1==password2:
+            result=authontication.Signup.create_data(name=name,user=user_email,password=password1)
+            if result:return render_template('signup.html')
+            else:return render_template('login.html')
+        else:return render_template('signup.html')
+    else:return render_template('signup.html')
+@app.route('/login', methods=["GET", "POST"])
 def login():
-    return render_template('login.html')
+    if request.method == "POST":
+        user_email=request.form["user_email"]
+        password=request.form["user_password"]
+        data=authontication.Login.check_data(user=user_email,password=password)
+        if data:return render_template('home.html')
+        return render_template('login.html')
+    else:
+        return render_template('login.html')
 
 
 

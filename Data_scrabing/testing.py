@@ -166,7 +166,7 @@ class WebScraper:
 
                     # Handle possible click interception errors
                     try:
-                        link = driver.find_element(By.CLASS_NAME, out_div[1])
+                        link = driver.find_element(By.CLASS_NAME, out_div[0])
                         if link:
                             # Scroll the element into view before clicking
                             driver.execute_script("arguments[0].scrollIntoView(true);", link)

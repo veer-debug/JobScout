@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Listings - Homepage</title>
+    <title>Job Scout</title>
+    <link rel="icon" href="../static/data/logo1.ico" type="image/x-icon"> <!-- Path to your favicon file -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Hide the header by default */
@@ -11,36 +14,49 @@
             transform: translateY(-100%);
             transition: transform 0.3s ease;
         }
+
         .header-visible {
             transform: translateY(0);
             transition: transform 0.3s ease;
         }
     </style>
 </head>
+
 <body class="bg-gray-100">
 
     <!-- Popup Header Section -->
     <header id="popupHeader" class="bg-white shadow-md fixed top-0 left-0 right-0 z-10 header-hidden">
         <div class="container mx-auto p-6 flex justify-between items-center">
             <!-- Logo -->
-            <a href="#" class="text-2xl font-bold text-blue-600">JobScout</a>
+            <a href="/" class="flex items-center">
+                <img src="../static/data/logo1.ico" alt="Logo" class="w-12 h-12"> <!-- Adjust the size here -->
+                <span class="text-2xl font-bold text-blue-600">JobFinder</span> <!-- Add brand name if desired -->
+            </a>
+
             <!-- Navigation with Hover Underline Effect -->
             <nav class="space-x-6">
-                <a href="/" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
+                <a href="/"
+                    class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
+                <a href="#"
+                    class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
+                <a href="#"
+                    class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
+                <a href="#"
+                    class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
             </nav>
+
             <!-- Login Button -->
-            <a href="#" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+            <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
         </div>
     </header>
+
 
     <!-- Hero Section with Search Bar -->
     <section class="bg-blue-600 py-20 mt-16">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold text-white">Find Your Dream Job</h1>
-            <p class="text-lg text-gray-200 mt-4">Search from thousands of jobs available in your location and expertise</p>
+            <p class="text-lg text-gray-200 mt-4">Search from thousands of jobs available in your location and expertise
+            </p>
 
             <!-- Search Bar -->
             <form class="mt-8 max-w-3xl mx-auto flex space-x-4">
@@ -50,26 +66,26 @@
             </form>
         </div>
     </section>
-<!-- Job Listings Section -->
-<section class="container mx-auto py-16">
-    <h2 class="text-3xl font-bold text-center mb-8">Latest Job Openings</h2>
-    
-    <!-- Job Card Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Loop through jobs using Jinja -->
-        {% for job in jobs %}
-        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition-shadow duration-300">
-            <h3 class="text-2xl font-semibold text-blue-600">{{ job.title }}</h3>
-            <p class="text-gray-600 mt-2">{{ job.company }} - {{ job.location }}</p>
-            <p class="text-gray-600 mt-2">{{ job.type }}</p>
-            <p class="text-gray-600 mt-4">{{ job.description }}</p>
-            <a href="#" class="text-blue-600 mt-4 inline-block hover:underline">View Details</a>
-        </div>
-        {% endfor %}
-    </div>
-</section>
+    <!-- Job Listings Section -->
+    <section class="container mx-auto py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">Latest Job Openings</h2>
 
-    
+        <!-- Job Card Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Loop through jobs using Jinja -->
+            {% for job in jobs %}
+            <div class="bg-white p-6 rounded shadow hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-2xl font-semibold text-blue-600">{{ job.title }}</h3>
+                <p class="text-gray-600 mt-2">{{ job.company }} - {{ job.location }}</p>
+                <p class="text-gray-600 mt-2">{{ job.type }}</p>
+                <p class="text-gray-600 mt-4">{{ job.description }}</p>
+                <a href="#" class="text-blue-600 mt-4 inline-block hover:underline">View Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
     <!-- Footer Section -->
     <footer class="bg-gray-800 py-8">
         <div class="container mx-auto text-center text-gray-400">
@@ -86,7 +102,7 @@
         let lastScrollTop = 0;
         const popupHeader = document.getElementById("popupHeader");
 
-        window.addEventListener("scroll", function() {
+        window.addEventListener("scroll", function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrollTop > lastScrollTop) {
@@ -102,4 +118,5 @@
         });
     </script>
 </body>
+
 </html>
