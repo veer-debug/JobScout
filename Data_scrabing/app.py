@@ -1,20 +1,23 @@
 import pandas as pd
 from scrab import WebScraper
+from bs4 import BeautifulSoup
 import os
 
-df=pd.read_excel('Carears_pages.xlsx')
-df.rename(columns={'If Dynamic_xpath': 'next'}, inplace=True)
-for ind,row in df.iterrows():
-    if ind==1:
-        print(row['Name'])
-        url=row['CareersLink']
-        print(type(row['next']))
-        out_div=[row['Outer_div'],row['next']]
-        divs=[[row['Name_div_tag'],row['Name_div']],[row['Location_div_tag'],row['Location_div']],[row['Url_div_tag'],row['Url_div']],row['Name']]
-        print(divs)
-        WebScraper.scrape_job_data_static(url,out_div,divs)
+# Load the Excel file
+df = pd.read_excel('final_input.xlsx')
+for ind, row in df.iterrows():
+    print(f"Processing: {row['Name']}")
 
-    # print(url)
-    # print(out_div)
 
+    url = row['CareersLink']
+    out_div = [row['Outer_div'], row['next']]
     
+    # Define divs structure based on Excel data
+    divs = [
+        [row['Title_tag'], row['Title_attr_key'], row['Title_attr_value']],
+        [row['Link_tag'], row['Link_attr_key'], row['Link_attr_value']],
+        [row['Location_tag'], row['Location_attr_key'], row['Location_attr_value']],
+        row['Name']
+    ]
+    
+    WebScraper.scrape_job_data_static(url, out_div, divs)

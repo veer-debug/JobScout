@@ -36,6 +36,7 @@
             <nav class="space-x-6">
                 <a href="/" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
                 <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
+                <a href="/contact" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Contact</a>
                 <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
                 <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
             </nav>
@@ -99,35 +100,73 @@
         </div>
     </section>
 
-    <!-- Featured Jobs Section -->
-    <section class="py-16 bg-gray-50">
+
+
+
+
+<hr style="height: 2px; background-color: rgb(73, 41, 204); border: none;">
+
+
+
+
+      <!-- Job Categories Section -->
+      <section class="py-16">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Featured Jobs</h2>
-            <div class="grid grid-cols-3 gap-8">
-                <!-- Job Card -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <h3 class="text-xl font-bold text-blue-600">Software Engineer</h3>
-                    <p class="text-gray-600 mt-2">Google - Mountain View, CA</p>
-                    <p class="mt-4 text-gray-600">We are looking for a passionate software engineer to work on cutting-edge technologies. Apply today!</p>
-                    <a href="#" class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</a>
-                </div>
-
-                <!-- Job Card -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <h3 class="text-xl font-bold text-blue-600">Product Designer</h3>
-                    <p class="text-gray-600 mt-2">Apple - Cupertino, CA</p>
-                    <p class="mt-4 text-gray-600">Join our team of creative designers to create innovative products. Your designs will shape the future.</p>
-                    <a href="#" class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</a>
-                </div>
-
-                <!-- Job Card -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <h3 class="text-xl font-bold text-blue-600">Data Scientist</h3>
-                    <p class="text-gray-600 mt-2">Microsoft - Redmond, WA</p>
-                    <p class="mt-4 text-gray-600">Be part of our growing data science team to build data-driven solutions. Apply today to change the future!</p>
-                    <a href="#" class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</a>
-                </div>
+            <h2 class="text-3xl font-bold text-center mb-8">Browse Jobs by Company</h2>
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <!-- Job Categories -->
+                <a href="/company?company_name=Paytm" class="flex flex-col items-center hover:text-blue-600">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/paytm-icon.png" 
+                         alt="Paytm Logo" 
+                         class="mb-4 w-24 h-24 border-2 border-gray-300 rounded-full">
+                    <span class="text-2xl font-semibold">Paytm</span>
+                </a>
+                <a href="/company?company_name=Livspace" class="flex flex-col items-center hover:text-blue-600">
+                    <img src="https://www.livspace.com/_nuxt/img/livspace.458227b.svg" 
+                         alt="Design Logo" 
+                         class="mb-4 w-24 h-24 border-2 border-gray-300 rounded-full">
+                    <span class="text-2xl font-semibold">Livspace</span>
+                </a>
+                <a href="/company?company_name=orient technologies" class="flex flex-col items-center hover:text-blue-600">
+                    <img src="https://cdn.prod.website-files.com/6436acda0d5bc8518eca551a/6436b72617ab6e3dd7df73c1_Orient%20Icon.svg" 
+                         alt="Marketing Logo" 
+                         class="mb-4 w-24 h-24 border-2 border-gray-300 rounded-full">
+                    <span class="text-2xl font-semibold">Oreant Technologies</span>
+                </a>
+                <a href="/company?company_name=Cred" class="flex flex-col items-center hover:text-blue-600">
+                    <img src="https://play-lh.googleusercontent.com/r2ZbsIr5sQ7Wtl1T6eevyWj4KS7QbezF7JYB9gxQnLWbf0K4kU7qaLNcJLLUh0WG-3pK" 
+                         alt="2024 Logo" 
+                         class="mb-4 w-24 h-24 border-2 border-gray-300 rounded-full">
+                    <span class="text-2xl font-semibold">Cred</span>
+                </a>
             </div>
+        </div>
+    </section>
+    
+    
+    
+
+
+
+
+
+    <hr style="height: 2px; background-color: rgb(73, 41, 204); border: none;">
+
+    <!-- Featured Jobs Section -->
+    <section class="container mx-auto py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">Latest Job Openings</h2>
+
+        <!-- Job Card Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Loop through jobs using Jinja -->
+            
+            {% for i in range(n) %}
+            <div class="bg-white p-6 rounded shadow hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-2xl font-semibold text-blue-600">{{ title[i] }}</h3>
+                <p class="text-gray-600 mt-2">{{ company[i] }} | {{ location[i] }}</p>
+                <a href="{{links[i]}}" class="text-blue-600 mt-4 inline-block hover:underline">View Details</a>
+            </div>
+            {% endfor %}
         </div>
     </section>
 

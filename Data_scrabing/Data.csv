@@ -1,18 +1,29 @@
-,job_company,job_titles,job_location,job_url,job_type
-0,orient technologies,Team Leader - Business Development (BFSI Sales),Mumbai,/job-cms/team-leader-business-development-bfsi-sales,Other
-1,orient technologies,Team Leader - Business Development for Pharma Sales,Mumbai,/job-cms/team-leader-business-development-for-pharma-sales,Other
-2,orient technologies,Team Leader - Business Development for SMB Sales,Mumbai,/job-cms/team-leader-business-development-for-smb-sales,Other
-3,orient technologies,Business Development Manager - Govt & PSU Sales,Mumbai,/job-cms/business-development-manager-govt-psu-sales,Management
-4,orient technologies,Business Development Manager - BFSI Sales,Mumbai,/job-cms/business-development-manager-bfsi-sales,Management
-5,orient technologies,Business Development Manager - SMB Sales,Mumbai,/job-cms/business-development-manager-smb-sales,Management
-6,orient technologies,Business Development Manager - Cloud Sales,Mumbai,/job-cms/business-development-manager-cloud-sales,Management
-7,orient technologies,Business Development Manager for IT Enabled Services Sales,Mumbai,/job-cms/business-development-manager-for-it-enabled-services-sales,Management
-8,orient technologies,Jr. Business Development - BFSI Sales,Mumbai,/job-cms/jr-business-development-bfsi-sales,Other
-9,orient technologies,Jr. Business Development Executive - SMB Sales,Mumbai,/job-cms/jr-business-development-executive-smb-sales,Other
-10,orient technologies,Jr. Business Development - Govt & PSU Sales,Mumbai,/job-cms/jr-business-development-govt-psu-sales,Other
-11,orient technologies,Sales Champion for Orient Services Sales,Delhi / Chennai / Bangalore,/job-cms/ales-champion-for-orient-services-sales,Other
-12,orient technologies,Sales Champion for Hyperconverged Infrastructure,Mumbai / Pune / Chennai / Bangalore / Delhi,/job-cms/sales-champion-for-hyperconverged-infrastructure,Other
-13,orient technologies,Sales Champion for End-User Computing,Pune / Delhi / Chennai,/job-cms/sales-champion-for-end-user-computing,Other
-
-
-/job-cms/team-leader-business-development-bfsi-sales
+job_company,job_titles,job_location,job_url,job_type
+getcruise,"Manager II, Data Science - Safety Metrics",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Staff Validation Software Engineer, Systems Engineering",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,Senior Autonomy Systems Engineer,,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,Staff AV Software Systems Engineer,,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,Senior Driving Behaviors Systems Engineer II,,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Senior Software Engineer, AV Validation Platform",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,Staff TPM - Sim & Test,,https://www.getcruise.com/careers/jobs/,Other
+getcruise,"Senior Technical Program Manager II, Autonomy",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Staff Machine Learning Software Engineer, Perception",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Senior Applied Scientist II, Autonomy Evaluation",,https://www.getcruise.com/careers/jobs/,Other
+getcruise,"Software Engineering Manager II, Fleet Management",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Senior Software Engineer II, Product Engineering, Consumer AV (US Remote Eligible)",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,Senior Data Engineer II,,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Staff Software Engineer, ML Data Platform",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Staff Engineer, Cloud Infrastructure Performance",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Senior ML Systems Eng II, ML Compute",,https://www.getcruise.com/careers/jobs/,Other
+getcruise,"Senior Staff ML Systems Engineer, AI Compute Platform",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Staff Software Engineer, Core Network Systems",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Manager II, Operations Data Science",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Watch Officer, Operations Control Center (Night Shift)",,https://www.getcruise.com/careers/jobs/,Other
+getcruise,"Manager II, Operations Management (Onsite- Swing Shift)",,https://www.getcruise.com/careers/jobs/,Other
+getcruise,"Manager II, Operations Management (Onsite- Night Shift)",,https://www.getcruise.com/careers/jobs/,Other
+getcruise,"Staff Software Engineer, Simulation",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Senior Software Engineer, Simulation & Test",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Senior Software Engineer, Simulation",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Staff Software Engineer, Simulation Test",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Senior Software Engineer II, Simulation Test",,https://www.getcruise.com/careers/jobs/,Tech
+getcruise,"Staff Software Engineer, Simulation",,https://www.getcruise.com/careers/jobs/,Tech

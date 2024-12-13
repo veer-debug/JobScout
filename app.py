@@ -8,16 +8,23 @@ import pandas as pd
 # ===================Data filtring========================
 data_class=Data()
 data=data_class.fetch_from_table()
+data.to_csv('data.csv')
 # company_name, job_title, location , job_link,type
-tech_data=data[data['type']=='tech']
+tech_data=data[data['type']=='Tech']
 desion_data=data[data['type']=='Desion']
-marketing_data=data[data['type']=='marketing']
+other_data=data[data['type']=='Other']
+marketing_data=data[data['type']=='Marketing']
 
 app = Flask(__name__)
 
 @app.route("/")
 def scrape():
-    return render_template("home.html")
+
+    company,title,location,links=data_seprate(pd.concat([tech_data.sample(5),marketing_data.sample(5),other_data.sample(5)]))
+    n=len(company)
+    
+   
+    return render_template('home.html',company=company,title=title,location=location,links=links,n=n)
 
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
@@ -51,10 +58,10 @@ def login():
 
 
 def data_seprate(df):
-    company=tech_data['company_name']
-    title=tech_data['job_title']
-    location=tech_data['location']
-    links=tech_data['job_link']
+    company=df.company_name.values
+    title=df.job_title.values
+    location=df.location.values
+    links=df.job_link.values
     return company,title,location,links
 
 
@@ -62,47 +69,41 @@ def data_seprate(df):
 @app.route("/tech")
 def tech():
     company,title,location,links=data_seprate(tech_data)
-    jobs = [
-        {"title": "Software Engineer", "company": "Google", "location": "Mountain View, CA", "type": "Full-time", "description": "As a Software Engineer at Google, you will work on cutting-edge technologies to solve impactful problems."},
-        {"title": "Data Scientist", "company": "Microsoft", "location": "Seattle, WA", "type": "Remote, Full-time", "description": "Join the Microsoft Data Science team to analyze large datasets and build predictive models."},
-        {"title": "Frontend Developer", "company": "Amazon", "location": "New York, NY", "type": "Full-time", "description": "Work on developing scalable web applications using modern frontend technologies at Amazon."},
-        {"title": "DevOps Engineer", "company": "Netflix", "location": "Los Gatos, CA", "type": "Full-time", "description": "Join Netflix's team as a DevOps Engineer to optimize and automate cloud infrastructure."},
-        {"title": "UX/UI Designer", "company": "Apple", "location": "Cupertino, CA", "type": "Full-time", "description": "Design intuitive and impactful user interfaces for Apple's innovative products."},
-        {"title": "Cybersecurity Analyst", "company": "Cisco", "location": "San Jose, CA", "type": "Remote, Full-time", "description": "Be a part of Cisco’s security team, where you will detect and mitigate cybersecurity threats."}
-        ]
-    jobs = [
-        {"title": "Software Engineer", "company": "Google", "location": "Mountain View, CA", "type": "Full-time", "description": "As a Software Engineer at Google, you will work on cutting-edge technologies to solve impactful problems."},
-        {"title": "Data Scientist", "company": "Microsoft", "location": "Seattle, WA", "type": "Remote, Full-time", "description": "Join the Microsoft Data Science team to analyze large datasets and build predictive models."},
-        {"title": "Frontend Developer", "company": "Amazon", "location": "New York, NY", "type": "Full-time", "description": "Work on developing scalable web applications using modern frontend technologies at Amazon."},
-        {"title": "DevOps Engineer", "company": "Netflix", "location": "Los Gatos, CA", "type": "Full-time", "description": "Join Netflix's team as a DevOps Engineer to optimize and automate cloud infrastructure."},
-        {"title": "UX/UI Designer", "company": "Apple", "location": "Cupertino, CA", "type": "Full-time", "description": "Design intuitive and impactful user interfaces for Apple's innovative products."},
-        {"title": "Cybersecurity Analyst", "company": "Cisco", "location": "San Jose, CA", "type": "Remote, Full-time", "description": "Be a part of Cisco’s security team, where you will detect and mitigate cybersecurity threats."}
-        ]
-    return render_template('tech.html',jobs=jobs)
+    n=len(company)
+    
+   
+    return render_template('tech.html',company=company,title=title,location=location,links=links,n=n)
 @app.route('/desion')
 def desion():
-    company,title,location,links=data_seprate(desion_data)
-    jobs = [
-        {"title": "Software Engineer", "company": "Google", "location": "Mountain View, CA", "type": "Full-time", "description": "As a Software Engineer at Google, you will work on cutting-edge technologies to solve impactful problems."},
-        {"title": "Data Scientist", "company": "Microsoft", "location": "Seattle, WA", "type": "Remote, Full-time", "description": "Join the Microsoft Data Science team to analyze large datasets and build predictive models."},
-        {"title": "Frontend Developer", "company": "Amazon", "location": "New York, NY", "type": "Full-time", "description": "Work on developing scalable web applications using modern frontend technologies at Amazon."},
-        {"title": "DevOps Engineer", "company": "Netflix", "location": "Los Gatos, CA", "type": "Full-time", "description": "Join Netflix's team as a DevOps Engineer to optimize and automate cloud infrastructure."},
-        {"title": "UX/UI Designer", "company": "Apple", "location": "Cupertino, CA", "type": "Full-time", "description": "Design intuitive and impactful user interfaces for Apple's innovative products."},
-        {"title": "Cybersecurity Analyst", "company": "Cisco", "location": "San Jose, CA", "type": "Remote, Full-time", "description": "Be a part of Cisco’s security team, where you will detect and mitigate cybersecurity threats."}
-        ]
-    return render_template('desion.html',jobs=jobs)
+    company,title,location,links=data_seprate(other_data)
+    n=len(company)
+    
+   
+    return render_template('desion.html',company=company,title=title,location=location,links=links,n=n)
 @app.route('/marketing')
 def marketing():
     company,title,location,links=data_seprate(marketing_data)
-    jobs = [
-        {"title": "Software Engineer", "company": "Google", "location": "Mountain View, CA", "type": "Full-time", "description": "As a Software Engineer at Google, you will work on cutting-edge technologies to solve impactful problems."},
-        {"title": "Data Scientist", "company": "Microsoft", "location": "Seattle, WA", "type": "Remote, Full-time", "description": "Join the Microsoft Data Science team to analyze large datasets and build predictive models."},
-        {"title": "Frontend Developer", "company": "Amazon", "location": "New York, NY", "type": "Full-time", "description": "Work on developing scalable web applications using modern frontend technologies at Amazon."},
-        {"title": "DevOps Engineer", "company": "Netflix", "location": "Los Gatos, CA", "type": "Full-time", "description": "Join Netflix's team as a DevOps Engineer to optimize and automate cloud infrastructure."},
-        {"title": "UX/UI Designer", "company": "Apple", "location": "Cupertino, CA", "type": "Full-time", "description": "Design intuitive and impactful user interfaces for Apple's innovative products."},
-        {"title": "Cybersecurity Analyst", "company": "Cisco", "location": "San Jose, CA", "type": "Remote, Full-time", "description": "Be a part of Cisco’s security team, where you will detect and mitigate cybersecurity threats."}
-        ]
-    return render_template('marketing.html',jobs=jobs)
+    n=len(company)
+    
+   
+    return render_template('marketing.html',company=company,title=title,location=location,links=links,n=n)
+    
+@app.route('/company', methods=["GET", "POST"])
+def companys():
+    if request.method == "GET":
+        company_name = request.args.get("company_name")  # Use request.args.get to get query parameters
+        if company_name:
+            print(len(data[data['company_name'] == company_name]))
+            company, title, location, links = data_seprate(data[data['company_name'] == company_name])
+            n = len(company)
+            return render_template('company.html', company=company, title=title, location=location, links=links, n=n)
+        else:
+            return render_template('home.html')
+    else:
+        return render_template('home.html')
+
+
+
     
 @app.route('/batch_2024')
 def batch_2024():
@@ -115,6 +116,10 @@ def batch_2024():
         {"title": "Cybersecurity Analyst", "company": "Cisco", "location": "San Jose, CA", "type": "Remote, Full-time", "description": "Be a part of Cisco’s security team, where you will detect and mitigate cybersecurity threats."}
         ]
     return render_template('batch_2024.html',jobs=jobs)
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
     
 
 if __name__ == "__main__":

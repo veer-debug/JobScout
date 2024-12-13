@@ -71,15 +71,15 @@
         <h2 class="text-3xl font-bold text-center mb-8">Latest Job Openings</h2>
 
         <!-- Job Card Grid -->
+        <h3 class="text-2xl font-semibold text-blue-600">Total : {{ n }} Results</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Loop through jobs using Jinja -->
-            {% for job in jobs %}
+            
+            {% for i in range(n) %}
             <div class="bg-white p-6 rounded shadow hover:shadow-lg transition-shadow duration-300">
-                <h3 class="text-2xl font-semibold text-blue-600">{{ job.title }}</h3>
-                <p class="text-gray-600 mt-2">{{ job.company }} - {{ job.location }}</p>
-                <p class="text-gray-600 mt-2">{{ job.type }}</p>
-                <p class="text-gray-600 mt-4">{{ job.description }}</p>
-                <a href="#" class="text-blue-600 mt-4 inline-block hover:underline">View Details</a>
+                <h3 class="text-2xl font-semibold text-blue-600">{{ title[i] }}</h3>
+                <p class="text-gray-600 mt-2">{{ company[i] }} | {{ location[i] }}</p>
+                <a href="{{links[i]}}" class="text-blue-600 mt-4 inline-block hover:underline">View Details</a>
             </div>
             {% endfor %}
         </div>

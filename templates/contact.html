@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Scout</title>
+    <link rel="icon" href="../static/data/logo1.ico" type="image/x-icon"> <!-- Path to your favicon file -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hide the header by default */
+        .header-hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .header-visible {
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+    
+<body class="bg-gray-100">
+
+    <!-- Popup Header Section -->
+    <header id="popupHeader" class="bg-white shadow-md fixed top-0 left-0 right-0 z-10 header-hidden">
+        <div class="container mx-auto p-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="../static/data/logo1.ico" alt="Logo" class="w-12 h-12"> <!-- Adjust the size here -->
+                <span class="text-2xl font-bold text-blue-600">JobFinder</span> <!-- Add brand name if desired -->
+            </a>
+            
+            <!-- Navigation with Hover Underline Effect -->
+            <nav class="space-x-6">
+                <a href="/" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
+                <a href="/contact" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Contact</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
+            </nav>
+            
+            <!-- Login Button -->
+            <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font mt-10">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <div class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">TEAM SHIRSHAK</h1>
+                <div class="h-1 w-100 bg-indigo-500 rounded mb-20"></div>
+            </div>
+          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://github.com/veer-debug/music/blob/main/RANVEER.jpeg?raw=true">
+          <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">RANVEER KUMAR ( ML-Devloper)</h1>
+            <p class="mb-8 leading-relaxed">Within our project, I spearhead the implementation of machine learning techniques to predict prices and deliver customized recommendations, maximizing decision-making accuracy and user engagement. My focus is on leveraging data-driven insights to continuously refine our systems, ensuring they remain agile and responsive to evolving market dynamics, ultimately driving sustained business growth</p>
+          </div>
+        </div>
+        <span class="flex justify-center -mt-20 mb-20">
+            <a href="https://www.facebook.com/profile.php?id=100021945492319" class="text-gray-500" >
+                
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://twitter.com/RANVEER_K07" class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/__ranveer0__/" class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ranveer-kumar-12050a247/" class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+    
+        
+      </section>
+      <hr>
+      
+    
+      <!-- Prabhnoor -->
+      <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://github.com/veer-debug/music/blob/main/prabhnoor.jpg?raw=true">
+          <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">PRABHNOOR KAUR</h1>
+            <p class="mb-8 leading-relaxed">In my role as a frontend developer, I employ Flask, HTML, and Tailwind CSS to create visually captivating and intuitive interfaces for our project. With meticulous attention to detail, I design and implement responsive layouts that enhance user engagement and streamline navigation. My aim is to seamlessly integrate functionality with aesthetics, delivering a polished user experience that aligns with our project's objectives and vision.</p>
+          </div>
+        </div>
+        <span class="flex justify-center -mt-20 mb-20">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+    
+      </section>
+    
+      <hr>
+    
+      <!-- Vanshita -->
+      <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://github.com/veer-debug/music/blob/main/vanshita.jpg?raw=true">
+          <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">VANSHITA AGGARWAL</h1>
+            <p class="mb-8 leading-relaxed">In our project, I specialize in data gathering from 99acres and performing thorough preprocessing to prepare the data for analysis. Leveraging web scraping techniques and libraries like Pandas, NumPy, and Matplotlib, I extract, clean, and visualize the data to provide valuable insights. My role is crucial in ensuring the quality and integrity of the data, laying a solid foundation for subsequent analysis and modeling efforts within our team</p>
+          </div>
+        </div>
+        <span class="flex justify-center -mt-20 mb-20">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+    
+      </section>
+    
+      <hr>
+    
+      <!-- Rishikesh Gautam -->
+      <section class="text-gray-600 body-font mb-10">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://github.com/veer-debug/music/blob/main/rishikesh.jpg?raw=true">
+          <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">RISHIKESH GAUTAM</h1>
+            <p class="mb-8 leading-relaxed">As the testing and deployment lead in our project, I play a pivotal role in ensuring the reliability and functionality of our product at every stage of development. Through meticulous testing procedures, I validate each component to guarantee optimal performance and user satisfaction. Once the project is complete, I oversee its seamless deployment and take charge of managing it post-launch, ensuring smooth operation and timely updates to meet evolving needs. My dedication to quality assurance and efficient project management contributes to the success and longevity of our endeavor.</p>
+          </div>
+        </div>
+        <span class="flex justify-center -mt-20 ">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+    
+      </section>
+    
+    
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2024 JobFinder. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const popupHeader = document.getElementById("popupHeader");
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                popupHeader.classList.remove("header-visible");
+                popupHeader.classList.add("header-hidden");
+            } else {
+                // Scrolling up
+                popupHeader.classList.remove("header-hidden");
+                popupHeader.classList.add("header-visible");
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
