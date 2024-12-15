@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="icon" href="../static/data/logo1.ico" type="image/x-icon"> <!-- Path to your favicon file -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
+        <div class="container mx-auto p-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="../static/data/logo1.ico" alt="Logo" class="w-12 h-12"> <!-- Adjust the size here -->
+                <span class="text-2xl font-bold text-blue-600">JobScout</span> <!-- Add brand name if desired -->
+            </a>
+            
+            <!-- Navigation with Hover Underline Effect -->
+            <nav class="space-x-6">
+                <a href="/" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
+                <a href="/contact" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Contact</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
+            </nav>
+            
+            <!-- Login Button -->
+            <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+        </div>
+    </header>
+
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl font-bold text-center mb-8">User Profile</h1>
+        
+        <div class="bg-white p-8 rounded shadow-md text-center">
+            <p class="text-lg font-semibold mb-4">User ID: 12345</p>
+            <p class="text-lg font-semibold mb-4">User Name: John Doe</p>
+            <p class="text-lg font-semibold mb-4">User Password: ********</p>
+            <p class="text-lg font-semibold mb-4">User Interests: Data Science, Web Development</p>
+            
+            <p class="mt-6 text-gray-600 italic">"The best way to predict your future is to create it." – Peter Drucker</p>
+            <p class="mt-4 text-gray-600">In today's fast-paced world, it's easy to feel overwhelmed by the constant demands and pressures that life throws at us. However, it's important to remember that every day is a new opportunity to achieve greatness. Each step we take is a building block towards our dreams and aspirations. Embrace the challenges, keep pushing forward, and believe in yourself. Your journey is unique, and your potential is limitless. Keep moving forward, one step at a time, and you'll be amazed at what you can achieve. Remember, every day is a chance to create a better version of yourself and carve out the life you truly desire. Stay focused, stay determined, and never lose sight of your goals.
+            </p>
+            
+            <p class="mt-4 text-gray-600">
+                Welcome to your personal profile page! Here, you can manage and view your personal details and interests. This webpage is designed to provide you with a seamless experience in managing your online presence. Your profile information, including your username, password, and interests, is securely stored and can be updated anytime with the click of a button. The “Add Your Interest” button allows you to specify and manage your interests, keeping your profile dynamic and tailored to your needs. At JobScout, we believe in empowering individuals to pursue their passions and goals, and this profile page is just one of the ways we help you stay connected with what matters most to you. Stay motivated, stay focused, and keep exploring new opportunities!
+            </p>
+
+            <a href="/add-interest" class="block text-center bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 mt-4">Add Your Interest</a>
+            
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2024 JobScout. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
