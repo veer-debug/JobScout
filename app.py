@@ -3,12 +3,14 @@ import csv
 from data_base import Data
 import authontication 
 import pandas as pd
+from keywords import SkillExtractor
 import os
 
 # ===================Data filtering========================
 data_class = Data()
 data = data_class.fetch_from_table()
 data.to_csv('data.csv')
+skillsset=SkillExtractor()
 
 # company_name, job_title, location, job_link, type
 tech_data = data[data['type'] == 'Tech']
@@ -22,16 +24,21 @@ UPLOAD_FOLDER = 'uploads/'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 login_user_ = False
-profile_data = None  # Default to None if no user is logged in
+profile_data = False  # Default to None if no user is logged in
 
 @app.route("/")
-def scrape():
+def home():
+    global profile_data
+    global login_user_
     company, title, location, links = data_separate(pd.concat([tech_data.sample(5), marketing_data.sample(5), other_data.sample(5)]))
     n = len(company)
-    return render_template('home.html', company=company, title=title, location=location, links=links, n=n, login_user_=login_user_)
+    profile_name = profile_data['user_name'] if profile_data else None
+    return render_template('home.html', company=company, title=title, location=location, links=links, n=n, login_user_=login_user_,profile_name=profile_name)
 
 @app.route('/submit_application', methods=["POST"])
 def submit_application():
+   
+
     if request.method == "POST":
         user_name = request.form["user_name"]
         user_email = request.form["user_email"]
@@ -41,13 +48,16 @@ def submit_application():
         if resume:
             resume_path = os.path.join(app.config['UPLOAD_FOLDER'], resume.filename)
             resume.save(resume_path)
+            skils=skillsset.extract_skills_from_pdf(file_path=resume_path)
+            skils=', '.join(skils)
+            authontication.Signup.add_skills(user_id=user_email,skill=skils)
 
             # Save application data to CSV
             with open('applications.csv', 'a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow([user_name, user_email, college_name, resume.filename])
 
-            return render_template('profile.html')
+            return profile()
         else:
             return "Failed to submit application. Please try again."
 
@@ -87,8 +97,9 @@ def login():
             global login_user_
             login_user_ = True
             profile_extract(user_email)
-            profile_name = profile_data['user_name'] if profile_data else None  # Ensure profile data exists
-            return render_template('home.html', login_user_=login_user_, profile_name=profile_name)
+            return home()
+
+            
         else:
             return render_template('login.html')
     else:
@@ -103,6 +114,8 @@ def data_separate(df):
 
 @app.route("/tech")
 def tech():
+    global profile_data
+    global login_user_
     company, title, location, links = data_separate(tech_data)
     n = len(company)
     profile_name = profile_data['user_name'] if profile_data else None  # Ensure profile data exists
@@ -110,6 +123,8 @@ def tech():
 
 @app.route('/desion')
 def desion():
+    global profile_data
+    global login_user_
     company, title, location, links = data_separate(desion_data)
     n = len(company)
     profile_name = profile_data['user_name'] if profile_data else None  # Ensure profile data exists
@@ -117,6 +132,8 @@ def desion():
 
 @app.route('/marketing')
 def marketing():
+    global profile_data
+    global login_user_
     company, title, location, links = data_separate(marketing_data)
     n = len(company)
     profile_name = profile_data['user_name'] if profile_data else None  # Ensure profile data exists
@@ -124,6 +141,8 @@ def marketing():
 
 @app.route('/company', methods=["GET", "POST"])
 def companys():
+    global profile_data
+    global login_user_
     if request.method == "GET":
         company_name = request.args.get("company_name")  # Use request.args.get to get query parameters
         if company_name:
@@ -139,6 +158,8 @@ def companys():
 
 @app.route('/batch_2024')
 def batch_2024():
+    global profile_data
+    global login_user_
     jobs = [
         {"title": "Software Engineer", "company": "Google", "location": "Mountain View, CA", "type": "Full-time", "description": "As a Software Engineer at Google, you will work on cutting-edge technologies to solve impactful problems."},
         {"title": "Data Scientist", "company": "Microsoft", "location": "Seattle, WA", "type": "Remote, Full-time", "description": "Join the Microsoft Data Science team to analyze large datasets and build predictive models."},
@@ -152,11 +173,15 @@ def batch_2024():
 
 @app.route('/contact')
 def contact():
+    global profile_data
+    global login_user_
     profile_name = profile_data['user_name'] if profile_data else None  # Ensure profile data exists
     return render_template('contact.html', login_user_=login_user_, profile_name=profile_name)
 
 @app.route("/profile")
 def profile():
+    global profile_data
+    global login_user_
     if profile_data:
         user_id = profile_data['id']
         user_name = profile_data['user_name']
@@ -170,10 +195,13 @@ def profile():
 
 @app.route("/add-interest")
 def user_info():
+    global login_user_
     return render_template('user_info.html', login_user_=login_user_)
 
 @app.route("/about")
 def about_section():
+    global profile_data
+    global login_user_
     profile_name = profile_data['user_name'] if profile_data else None  # Ensure profile data exists
     return render_template('about.html', login_user_=login_user_, profile_name=profile_name)
 

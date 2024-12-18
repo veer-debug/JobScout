@@ -94,10 +94,11 @@ class Signup:
 
             # Update or insert skills for the given user
             # Check if the user exists
-            cursor.execute("SELECT * FROM jobs_user WHERE user_id = %s", (user_id,))
-            data = cursor.fetchone()
+            cursor.execute("SELECT * FROM user_skills WHERE user_id = %s", (user_id,))
+            data = cursor.fetchall()
             
             if data:
+                
                 # Update skills for the existing user
                 cursor.execute("""
                     UPDATE user_skills 
@@ -105,6 +106,7 @@ class Signup:
                     WHERE user_id = %s;
                 """, (skill, user_id))
             else:
+                
                 # Insert new skill for the user if they do not exist
                 cursor.execute("""
                     INSERT INTO user_skills (user_id, skill) 

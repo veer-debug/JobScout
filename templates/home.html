@@ -37,15 +37,15 @@
                 <a href="/" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
                 <a href="/contact" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Contact</a>
                 <a href="/about" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
-                <a href="/profile" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Profile</a>
+                <!-- <a href="/profile" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Profile</a> -->
             </nav>
             
             <!-- Login Button -->
             <div>
-                {% if user_login %}
-                <a href="/profile"class=" text-white py-2 px-4  hover:bg-blue-700"> {{ profile_name }}</a>
+                {% if login_user_ %}
+                <a href="/profile"class=" text-gray-700 py-2 px-4  hover:bg-blue-700"> {{ profile_name }}</a>
                 {% else %}
-                    <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+                <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
                 {% endif %}
             </div>
             
@@ -98,10 +98,7 @@
                     <span class="text-2xl font-semibold">2026</span>
                     <p class="text-gray-600 mt-2">Jobs for Graduates of 2026</p>
                 </a>
-                <a href="#" class="block p-6 bg-white shadow-md rounded-lg hover:bg-blue-600 hover:text-white">
-                    <span class="text-2xl font-semibold">2027</span>
-                    <p class="text-gray-600 mt-2">Jobs for Graduates of 2027</p>
-                </a>
+                
             </div>
         </div>
     </section>

@@ -11,8 +11,8 @@
 
 <body class="bg-gray-100">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
+    <!-- Popup Header Section -->
+    <header id="popupHeader" class="bg-white shadow-md fixed top-0 left-0 right-0 z-10 header-hidden">
         <div class="container mx-auto p-6 flex justify-between items-center">
             <!-- Logo -->
             <a href="/" class="flex items-center">
@@ -23,37 +23,65 @@
             <!-- Navigation with Hover Underline Effect -->
             <nav class="space-x-6">
                 <a href="/" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
                 <a href="/contact" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Contact</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
+                <a href="/about" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
+                <!-- <a href="/profile" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Profile</a> -->
             </nav>
             
             <!-- Login Button -->
-            <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+            <div>
+                {% if login_user_ %}
+                <a href="/profile" class="text-gray-700 py-2 px-4 hover:bg-blue-700"> {{ user_name }}</a>
+                {% else %}
+                <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+                {% endif %}
+            </div>
+            
         </div>
     </header>
 
-    <div class="container mx-auto p-8">
-        <h1 class="text-4xl font-bold text-center mb-8">User Profile</h1>
-        
-        <div class="bg-white p-8 rounded shadow-md text-center">
-            <p class="text-lg font-semibold mb-4">User ID: 12345</p>
-            <p class="text-lg font-semibold mb-4">User Name: John Doe</p>
-            <p class="text-lg font-semibold mb-4">User Password: ********</p>
-            <p class="text-lg font-semibold mb-4">User Interests: Data Science, Web Development</p>
-            
-            <p class="mt-6 text-gray-600 italic">"The best way to predict your future is to create it." – Peter Drucker</p>
-            <p class="mt-4 text-gray-600">In today's fast-paced world, it's easy to feel overwhelmed by the constant demands and pressures that life throws at us. However, it's important to remember that every day is a new opportunity to achieve greatness. Each step we take is a building block towards our dreams and aspirations. Embrace the challenges, keep pushing forward, and believe in yourself. Your journey is unique, and your potential is limitless. Keep moving forward, one step at a time, and you'll be amazed at what you can achieve. Remember, every day is a chance to create a better version of yourself and carve out the life you truly desire. Stay focused, stay determined, and never lose sight of your goals.
-            </p>
-            
-            <p class="mt-4 text-gray-600">
-                Welcome to your personal profile page! Here, you can manage and view your personal details and interests. This webpage is designed to provide you with a seamless experience in managing your online presence. Your profile information, including your username, password, and interests, is securely stored and can be updated anytime with the click of a button. The “Add Your Interest” button allows you to specify and manage your interests, keeping your profile dynamic and tailored to your needs. At JobScout, we believe in empowering individuals to pursue their passions and goals, and this profile page is just one of the ways we help you stay connected with what matters most to you. Stay motivated, stay focused, and keep exploring new opportunities!
-            </p>
+    <div class="container mt-20 mx-auto p-8">
 
-            <a href="/add-interest" class="block text-center bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 mt-4">Add Your Interest</a>
+        <!-- Profile Container with Image and Info Side by Side -->
+        <div class="flex justify-center items-start space-x-8 mb-6">
+
+            <!-- Profile Image -->
+            <div class="w-1/4 mt-16 ml-20">
+                <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?t=st=1734303046~exp=1734306646~hmac=4e459f1f97c9d20ef06f4069864ef92ac8d3ce3c1da92c586e36768c9994f276&w=740" alt="Profile Picture" class="w-60 h-60 rounded-full border-4 border-blue-600"> <!-- Increased size -->
+            </div>
+
+            <!-- Profile Info -->
+            <div class="w-1/2">
+                <h1 class="text-4xl font-bold mb-8">My Profile</h1>
+                {% if user_id %}
+                <p class="text-lg font-semibold mb-4 text-blue-700">ID: <span class="text-gray-800">{{user_id}}</span></p> <!-- Differentiating color for ID and value -->
+                {% endif %}
+                {% if user_name %}
+                <p class="text-lg font-semibold mb-4 text-blue-700">Name: <span class="text-gray-800">{{user_name}}</span></p> <!-- Differentiating color for Name -->
+                {% endif %}
+                {% if user_email %}
+                <p class="text-lg font-semibold mb-4 text-blue-700">Email: <span class="text-gray-800">{{user_email}}</span></p> <!-- Differentiating color for Email -->
+                {% endif %}
+                {% if user_password %}
+                <p class="text-lg font-semibold mb-4 text-blue-700">Password: <span class="text-gray-800">{{user_password}}</span></p> <!-- Differentiating color for Password -->
+                {% endif %}
+                {% if user_date %}
+                <p class="text-lg font-semibold mb-4 text-blue-700">Registe Date: <span class="text-gray-800">{{user_date}}</span></p> <!-- Differentiating color for Register Date -->
+                {% endif %}
+                {% if key_words %}
+                <p class="text-lg font-semibold mb-4 text-blue-700">My skills: <span class="text-gray-800">{{key_words.skill}}</span></p> <!-- Differentiating color for Skills -->
+                {% endif %}
+            </div>
             
         </div>
+        <a href="/add-interest" class="text-center block bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 mt-4">Add Your Interest</a>
+       
+        
+        <!-- Additional Text taking the rest of the screen -->
+        <div class="w-full">
+            <p class="mt-6 text-gray-600 italic">"The best way to predict your future is to create it." – Peter Drucker</p>
+            <p class="mt-4 text-gray-600">In today's fast-paced world, it's easy to feel overwhelmed by the constant demands and pressures that life throws at us. However, it's important to remember that every day is a new opportunity to achieve greatness. Each step we take is a building block towards our dreams and aspirations. Embrace the challenges, keep pushing forward, and believe in yourself. Your journey is unique, and your potential is limitless. Keep moving forward, one step at a time, and you'll be amazed at what you can achieve. Remember, every day is a chance to create a better version of yourself and carve out the life you truly desire. Stay focused, stay determined, and never lose sight of your goals.</p>
+             </div>
     </div>
 
     <!-- Footer Section -->

@@ -1,2 +1,35 @@
 werkzeug - WARNING -  * Debugger is active!
-werkzeug - INFO -  * Debugger PIN: 565-584-055
+werkzeug - INFO -  * Debugger PIN: 942-847-235
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:35:43] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:35:43] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:35:43] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:11] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:11] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:12] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:39] "GET /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:39] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:50] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:50] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:53] "GET /signup HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:36:53] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:11] "POST /signup HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:11] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:16] "GET /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:16] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:28] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:28] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:36] "GET /tech HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:36] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:47] "GET /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:37:52] "GET /signup HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:38:17] "GET /signup HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:38:17] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:38:45] "POST /signup HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:38:45] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:38:49] "GET /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:38:49] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:39:09] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:39:09] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:39:21] "GET /tech HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Dec/2024 11:39:21] "[36mGET /static/data/logo1.ico HTTP/1.1[0m" 304 -

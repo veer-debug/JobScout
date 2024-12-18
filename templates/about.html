@@ -20,7 +20,7 @@
         }
     </style>
 </head>
-
+    
 <body class="bg-gray-100">
 
     <!-- Popup Header Section -->
@@ -31,19 +31,24 @@
                 <img src="../static/data/logo1.ico" alt="Logo" class="w-12 h-12"> <!-- Adjust the size here -->
                 <span class="text-2xl font-bold text-blue-600">JobScout</span> <!-- Add brand name if desired -->
             </a>
-
+            
             <!-- Navigation with Hover Underline Effect -->
             <nav class="space-x-6">
                 <a href="/" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Home</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Jobs</a>
                 <a href="/contact" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Contact</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Categories</a>
                 <a href="/about" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">About</a>
-                <a href="/profile" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Profile</a>
+                <!-- <a href="/profile" class="text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition-all duration-300">Profile</a> -->
             </nav>
-
+            
             <!-- Login Button -->
-            <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+            <div>
+                {% if login_user_ %}
+                <a href="/profile"class=" text-gray-700 py-2 px-4  hover:bg-blue-700"> {{ profile_name }}</a>
+                {% else %}
+                <a href="/login" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login</a>
+                {% endif %}
+            </div>
+            
         </div>
     </header>
 
@@ -101,7 +106,7 @@
                         <li><strong>User Name:</strong> Your official name (please, no gamer tags).</li>
                         <li><strong>Email:</strong> A professional email address—no “cooldude123” nonsense.</li>
                         <li><strong>College Name:</strong> Because your alma mater deserves a shout-out.</li>
-                        <li><strong>Resume:</strong> Upload a PDF or Word document highlighting your skills and achievements.</li>
+                        <li><strong>Resume:</strong> Upload a PDF highlighting your skills and achievements.</li>
                     </ul>
                 </div>
                 <div class="w-full ml-10 md:w-1/3">
